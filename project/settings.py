@@ -74,17 +74,11 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'moviedb',
-        'USER': 'postgres',
-        'PASSWORD': 'bennyv',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+import dj_database_url
 
+DATABASES = {
+    'default': dj_database_url.config(default='postgresql://blockbuster_db_user:Y7DVToJxdqEmAepZb8PvGZKTWKlWW09Z@dpg-d7rbe6vavr4c739vkpbg-a/blockbuster_db')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
